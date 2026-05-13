@@ -8,6 +8,7 @@ import os
 from database import db
 
 app = Flask(__name__)
+CORS(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 db.init_app(app)
 
@@ -84,4 +85,3 @@ with app.app_context():
 
 if __name__ == '__main__':
     app.run(debug=True)
-    CORS(app)
